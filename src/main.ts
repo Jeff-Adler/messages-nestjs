@@ -3,7 +3,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { MessagesModule } from './messages/messages.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(MessagesModule, { bodyParser: true });
+  const app = await NestFactory.create(MessagesModule);
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
