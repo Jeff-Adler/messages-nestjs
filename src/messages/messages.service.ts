@@ -1,11 +1,9 @@
 import { MessagesRepository } from './messages.repository';
 
 export class MessagesService {
-  messagesRepo: MessagesRepository;
-
-  constructor(messagesRepo: MessagesRepository) {
-    this.messagesRepo = messagesRepo;
-  }
+  // public operator is TS syntactic sugar to automatically create messagesRepo field
+  // for the class, and assign the argument to that field
+  constructor(public messagesRepo: MessagesRepository) {}
 
   findOne(id: string) {
     return this.messagesRepo.findOne(id);
