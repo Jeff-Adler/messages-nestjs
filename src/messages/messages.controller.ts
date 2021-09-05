@@ -9,6 +9,8 @@ import {
 import { CreateMessageDto } from './dtos/create-message.dto';
 import { MessagesService } from './messages.service';
 
+// Controller does not need to be @Injectable(), because it only has other classes as
+// dependencies, and is not a depedency of another class
 @Controller('messages')
 export class MessagesController {
   constructor(public messagesService: MessagesService) {}
